@@ -8,7 +8,7 @@ app = Flask(__name__)
 # mongo = PyMongo(app)
 
 
-@app.route('/home', methods=['GET'])
+@app.route('/', methods=['GET'])
 def getDetails():
     response = app.response_class(response=json.dumps({"data":"Hello world"}), status=200, mimetype='application/json')
     return response
@@ -51,4 +51,4 @@ def getDetails():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", debug=True, port=8080)
+    app.run(host="0.0.0.0", debug=True)
